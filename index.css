@@ -29,3 +29,9 @@ img{
     justify-content: space-between;
     flex-wrap:wrap;
 }
+
+#results{
+
+    width: 50%;
+    margin: auto;
+}
