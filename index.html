@@ -2,21 +2,41 @@
 <html>
     <head>
         <title>Match The Cards</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
     </head>
 
-    <body>
+    <body id="main">
         <section id="title">
             <h1>Match Cards</h1>
         </section>
+    </br>
 
         <section id="gameGrid">
 
+            <img src="cat.jpg" id="cat1" alt="CAT_IMAGE">
+            <img src="dog.jpeg" id="dog1" alt="DOG_IMAGE">
+            <img src="cat.jpg" id="cat2" alt="CAT_IMAGE">
+            <img src="fish.jpg" id="fish1" alt="FISH_IMAGE">
+            <img src="fish.jpg" id="fish2" alt="FISH_IMAGE">
+            <img src="dog.jpeg" id="dog2"  alt="DOG_IMAGE">
+
+            <!--The div will be the tiles over our images that user clicks on
+            to see the image behind-->
+            <div id="div1"></div>
+            <div id="div2"></div>
+            <div id="div3"></div>
+            <div id="div4"></div>
+            <div id="div5"></div>
+            <div id="div6"></div>
+
+
         </section>
+    </br>
 
         <section id="results">
             <label for="score" id="scoreLabel">Score: </label>
             <input type="number" id="score">
-        </br>
+        </br></br>
 
             <label for="failedAttempts" id="attemptsLabel">Failed Attemps:</label>
             <input type="number" id="failedAttempts">

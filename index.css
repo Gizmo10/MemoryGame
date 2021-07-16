@@ -1,0 +1,102 @@
+#title{
+
+    text-align: center;
+    background-color: aqua;
+    border: 1px solid gray;
+}
+
+img{
+
+    width: 20vw;
+    height: 20vh;
+    border: 1px solid black;
+    display: none;
+    z-index: 1;
+}
+
+div{
+
+    width: 20vw;
+    height: 20vh;
+    background-color:aqua;
+    border: 1px solid black;
+    z-index: 0;
+}
+
+#gameGrid{
+
+    display: grid;
+    grid-template-areas:
+    "one two three"
+    "four five six"
+    "seven eight nine";
+    grid-gap: 2px;
+    width: 50%;
+    margin: auto;
+}
+
+#cat1{
+
+    grid-area: one;
+}
+
+#div1{
+
+    grid-area: one;
+}
+
+#dog1{
+
+    grid-area: two;
+}
+
+#div2{
+
+    grid-area: two;
+}
+
+#cat2{
+    grid-area: three;
+}
+
+#div3{
+    grid-area: three;
+}
+
+#fish1{
+    grid-area: four;
+}
+
+#div4{
+    grid-area: four;
+}
+
+#fish2{
+    grid-area: five;
+}
+
+#div5{
+    grid-area: five;
+}
+
+#dog2{
+    grid-area: six;
+}
+
+#div6{
+    grid-area: six;
+}
+
+#main{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+
+#results{
+
+    width: 50%;
+    margin: auto;
+}
