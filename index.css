@@ -21,3 +21,11 @@ img{
     width: 50%;
     margin: auto;
 }
+
+#main{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
