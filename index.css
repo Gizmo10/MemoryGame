@@ -9,6 +9,16 @@ img{
 
     width: 20vw;
     height: 20vh;
+    z-index: 1;
+}
+
+div{
+
+    width: 20vw;
+    height: 20vh;
+    background-color:aqua;
+    border: 1px solid black;
+    z-index: 0;
 }
 
 #gameGrid{
