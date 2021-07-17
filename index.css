@@ -9,6 +9,7 @@ img{
 
     width: 20vw;
     height: 20vh;
+    border: 1px solid black;
     z-index: 1;
 }
 
@@ -24,8 +25,10 @@ div{
 #gameGrid{
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 20vh 20vh;
+    grid-template-areas:
+    "one two three"
+    "four five six"
+    "seven eight nine";
     grid-gap: 2px;
     border: 1px solid gray;
     width: 50%;
