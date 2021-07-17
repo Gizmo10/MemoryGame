@@ -6,6 +6,7 @@ let numOfFlippedTiles = 0;//tracks the number of flipped over tiles
 let numOfDisabledTiles = 0;//Tracks the number of disabled tiles
 let index1;
 let index2;
+const NUMBER_OF_IMAGES = imagesArray.length;
 
 //Initialise the score to 0
 scoreCount.value = 0;
@@ -30,7 +31,7 @@ const isMatch = ()=> {
 /*Updates the board if there was a match*/
 const updateForMatch = ()=>{
     //update the score
-    scoreCount.value++;
+    scoreCount.value += 1;
     //Set the displays of the tiles to none and the images which matched
     imagesArray[index1].style.display = "none";
     tilesArray[index1].style.display = "none";
@@ -39,8 +40,20 @@ const updateForMatch = ()=>{
     //Reset the flipped tiles to zero
     numOfFlippedTiles = 0;
     //adjust number of disabled tiles
-    numOfDisabledTiles+= 2;
+    numOfDisabledTiles += 2;
 
+}
+
+/*Updates the board when no match is found */
+const updateForNoMatch = ()=>{
+
+    //Update failed attempts
+    failedAttemptsCount.value += 1;
+    //Hide the images again
+    imagesArray[index1].style.display = "none";
+    imagesArray[index2].style.display = "none";
+    //Reset the number of flipped tiles
+    numOfFlippedTiles = 0;
 }
 
 /*This method is called when a tile is clicked and it will test the number of tiles clicked,
@@ -71,11 +84,26 @@ const main = (index)=>{
             updateForMatch();
 
         }else{
-            //Write a method for tiles that do not match
+            
+            updateForNoMatch();
         }
 
     }
  
 }
+
+/*The game should be played while we some tiles still have a block display
+and not all are disabled */
+
+do{
+
+    for(let k = 0;k < NUMBER_OF_IMAGES;k++){
+
+        tilesArray[k].onclick = ()=>{
+
+            main(k);
+        }
+    }
+}while(numOfDisabledTiles < NUMBER_OF_IMAGES );
 
 
