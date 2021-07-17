@@ -9,9 +9,9 @@ let index2;
 const NUMBER_OF_IMAGES = imagesArray.length;
 
 //Initialise the score to 0
-scoreCount.value = 0;
+let score = 0;
 //Initialise failed attempts to 0
-failedAttemptsCount.value = 0;
+let failedAttempts = 0;
 
 
 /*Test if two images match*/
@@ -31,7 +31,8 @@ const isMatch = ()=> {
 /*Updates the board if there was a match*/
 const updateForMatch = ()=>{
     //update the score
-    scoreCount.value += 1;
+    score++;
+    scoreCount.value = score;
     //Set the displays of the tiles to none and the images which matched
     imagesArray[index1].style.display = "none";
     tilesArray[index1].style.display = "none";
@@ -48,7 +49,8 @@ const updateForMatch = ()=>{
 const updateForNoMatch = ()=>{
 
     //Update failed attempts
-    failedAttemptsCount.value += 1;
+    failedAttempts++;
+    failedAttemptsCount.value = failedAttempts;
     //Hide the images again
     imagesArray[index1].style.display = "none";
     imagesArray[index2].style.display = "none";
@@ -95,15 +97,13 @@ const main = (index)=>{
 /*The game should be played while we some tiles still have a block display
 and not all are disabled */
 
-do{
+for(let i = 0;i < NUMBER_OF_IMAGES;i++){
 
-    for(let k = 0;k < NUMBER_OF_IMAGES;k++){
+    tilesArray[i].onclick = ()=>{
 
-        tilesArray[k].onclick = ()=>{
-
-            main(k);
-        }
+        main(i);
     }
-}while(numOfDisabledTiles < NUMBER_OF_IMAGES );
+}
+
 
 
